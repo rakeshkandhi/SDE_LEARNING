@@ -10,7 +10,7 @@ System design is the process of defining the architecture, components, modules, 
 2. [Fundamentals](fundamentals/fundamentals.md)
 3. [Scalability](scalability/scalability.md)
 4. [Reliability](reliability/reliability.md)
-5. [Caching](caching/caching.md)
+5. [Caching](caching/CACHING.md)
 6. [Databases](databases/databases.md)
 7. [Load Balancing](load_balancing/load_balancing.md)
 8. [Microservices](microservices/microservices.md)

@@ -43,4 +43,4 @@ Ensuring cache consistency is critical. Common strategies:
 - Use distributed caching for scalability in large systems.
 
 ---
-For more details, see the system design introduction in `introduction.md`.
+For more details, see the system design introduction in [introduction.md](../introduction.md).
