@@ -104,7 +104,7 @@ Choose your path based on:
 **Goal**: Learn about system performance and fault tolerance
 
 #### Topics to Cover
-- [Caching Strategies](./caching/caching.md)
+- [Caching Strategies](./caching/CACHING.md)
 - [Reliability and Fault Tolerance](./reliability/reliability.md)
 - Basic monitoring concepts
 - Performance optimization

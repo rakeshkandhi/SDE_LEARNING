@@ -15,10 +15,11 @@ Caching is a technique used to store frequently accessed data in a temporary sto
 4. **Database Caching:** Query results or computed data are cached to avoid repeated expensive queries.
 
 ## Caching Strategies
-- **Write-Through Cache:** Data is written to cache and database simultaneously.
-- **Write-Back (Write-Behind) Cache:** Data is written to cache first, then asynchronously to the database.
-- **Read-Through Cache:** Application reads from cache; if not found, fetches from database and updates cache.
-- **Cache Aside (Lazy Loading):** Application loads data into cache only when needed.
+- [**Write-Through Cache:**](write_through.md) Data is written to cache and database simultaneously.
+- [**Write-Back (Write-Behind) Cache:**](write_back.md) Data is written to cache first, then asynchronously to the database.
+- [**Read-Through Cache:**](read_through.md) Application reads from cache; if not found, fetches from database and updates cache.
+- [**Cache Aside (Lazy Loading):**](cache_aside.md) Application loads data into cache only when needed.
+- [**Cache Invalidation Techniques**](invalidation.md) Approach to managing stale data in cache.
 
 ## Cache Invalidation
 Ensuring cache consistency is critical. Common strategies:
