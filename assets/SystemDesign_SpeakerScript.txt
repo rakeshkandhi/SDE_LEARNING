@@ -1,0 +1,48 @@
+SLIDE 1: Title Slide
+
+Welcome everyone to this practical introduction to system design. I'm excited to spend the next hour with you exploring the fundamental concepts that every software engineer should know about designing scalable systems. Whether you're preparing for interviews or looking to level up your architecture skills, this session will give you a solid foundation. We'll cover everything from basic scaling concepts to advanced patterns used by companies like Netflix and Amazon. The goal is to demystify system design and give you practical tools you can apply immediately. Let's dive in!
+
+SLIDE 2: Agenda
+
+Here's our roadmap for the next hour. We'll start by understanding what system design really means and why it matters. Then we'll dive into the core building blocks - how to scale systems, choose the right database, and implement caching effectively. In the second half, we'll explore more advanced concepts like the CAP theorem and microservices architecture. To tie it all together, we'll walk through designing a URL shortener like Bit.ly, which is a classic interview question that demonstrates many of these concepts. Finally, we'll have time for your questions. Feel free to jot down questions as we go - I'll address them at the end.
+
+SLIDE 3: What is System Design?
+
+System design is essentially the blueprint for how we build software at scale. Think of it like designing a city - you need to plan where the roads go, how electricity flows, and where to place essential services. In software, we're planning how data flows, where to store it, and how components communicate. The key is understanding trade-offs - there's no perfect solution. Every choice has consequences. Want blazing fast performance? It might cost more. Need high availability? You'll sacrifice some consistency. This skill is crucial not just for passing interviews at top tech companies, but for building systems that can handle millions of users without falling apart.
+
+SLIDE 4: High-Level vs. Low-Level Design
+
+Think of high-level design as looking at a building from a helicopter - you see the overall structure, how buildings connect, and traffic flow. Low-level design is like being inside, planning each room's layout and electrical wiring. In system design interviews, you'll mostly focus on high-level design - drawing boxes for services, databases, and showing data flow. You might sketch out an API gateway, multiple microservices, and databases. Low-level design comes later when you're actually implementing - choosing specific data structures, writing algorithms, and defining class hierarchies. Both are important, but understanding when to use each is crucial for effective communication with different stakeholders.
+
+SLIDE 5: Scalability & Load Handling
+
+Imagine you run a popular restaurant. When more customers arrive, you have two choices: make your kitchen bigger with industrial equipment (vertical scaling) or open new branches (horizontal scaling). Vertical scaling is like upgrading your server from 8GB to 64GB RAM - it's simple but hits a ceiling. There's only so big a server can get. Horizontal scaling means adding more servers to share the load. It's more complex - you need load balancers, data synchronization - but it can scale infinitely. Most modern systems use horizontal scaling. Netflix doesn't have one mega-server; they have thousands working together. Understanding this distinction is fundamental to designing systems that can grow with your user base.
+
+SLIDE 6: Databases (SQL vs NoSQL)
+
+Choosing between SQL and NoSQL is like choosing between a filing cabinet and a warehouse. SQL databases are your organized filing cabinets - everything has a place, relationships are clear, and you can guarantee consistency. Perfect for banking where every transaction must be accurate. NoSQL databases are like warehouses where you can store anything - JSON documents, key-value pairs, graphs. They're built for scale and flexibility. Instagram uses Cassandra (NoSQL) for timeline data because they need to handle billions of posts, but they still use PostgreSQL (SQL) for user accounts where relationships and consistency matter. The key is using the right tool for the right job - most large systems use both.
+
+SLIDE 7: Caching Strategies
+
+Caching is like keeping snacks in your desk drawer instead of walking to the kitchen every time. It's all about reducing latency by keeping frequently used data close. There are multiple layers: browser cache, CDN for images and static files, application-level cache like Redis for database query results, and even CPU cache. The magic happens when a user requests popular content - instead of hitting your database, you serve it from memory in microseconds. But here's the catch - cache invalidation. When data changes, you need to update or remove cached copies. As Phil Karlton said, 'There are only two hard things in computer science: cache invalidation and naming things.' Getting caching right can reduce your database load by 90% or more.
+
+SLIDE 8: Load Balancers & Reverse Proxies
+
+Load balancers are like the host at a busy restaurant, directing customers to available tables. When thousands of requests hit your system, the load balancer decides which server handles each one. It might use round-robin (next server in line), least connections (quietest server), or even geographic routing. Modern load balancers do more than distribute traffic - they perform health checks, removing sick servers from rotation, handle SSL encryption, and can even cache responses. Nginx and HAProxy are popular choices. They're your first line of defense against traffic spikes. When Reddit goes viral with your content, a good load balancer ensures your servers share the load instead of one server melting down while others sit idle.
+
+SLIDE 9: CAP Theorem
+
+The CAP theorem is like a trilemma in distributed systems - you want all three but can only have two. Imagine a banking system during a network outage. If you prioritize Consistency and Partition tolerance, you might reject transactions to ensure accuracy (CP system). An online shopping cart might choose Availability and Partition tolerance, letting users add items even if servers can't sync immediately (AP system). In practice, it's not black and white - systems make trade-offs moment by moment. During Black Friday, Amazon might relax consistency for product views but maintain strict consistency for payments. Understanding CAP helps you make informed decisions about what to sacrifice when things go wrong - and in distributed systems, things always go wrong eventually.
+
+SLIDE 10: Microservices vs Monolith
+
+The monolith versus microservices debate is like choosing between a Swiss Army knife and a professional toolkit. Monoliths are one big application - simple to develop, test, and deploy. Perfect for startups and small teams. Microservices split functionality into independent services - user service, payment service, notification service. Each can be developed, deployed, and scaled independently. Netflix started as a monolith but now runs 700+ microservices. Why? Different parts have different needs. Video streaming needs massive scale, while user profiles need consistency. The key lesson: don't start with microservices unless you need them. As Martin Fowler says, 'you must be this tall to use microservices.' Start monolith, extract services when pain points emerge.
+
+SLIDE 11: System Design in Practice
+
+Let's design a URL shortener to see these concepts in action. First, gather requirements: shorten long URLs, redirect quickly, handle 100M requests/day, provide analytics. Start simple: API server, database to store mappings, and cache for popular URLs. For the short code, use base62 encoding of an auto-incrementing ID. As we scale, add load balancers, replicate the database for reads, use cache heavily since URLs don't change. For analytics, write events to a queue and process asynchronously. The beauty is how concepts connect - we need horizontal scaling for traffic, caching for performance, NoSQL for analytics, and careful consideration of CAP theorem for our consistency requirements. This is system design - making thoughtful trade-offs to build something that works and scales.
+
+SLIDE 12: Summary & Q&A
+
+We've covered a lot of ground today! Remember, system design isn't about memorizing solutions - it's about understanding trade-offs and applying patterns thoughtfully. Every system is unique, but the building blocks remain the same. As you practice, focus on asking good questions about requirements, thinking through bottlenecks, and explaining your reasoning. The best system designers aren't those who know the most technologies, but those who can match solutions to problems effectively. Keep practicing with real-world systems - how would you design Twitter, Uber, or Spotify? Now, I'd love to hear your questions. What aspects of system design are you most curious about? What challenges are you facing in your current projects?
+
