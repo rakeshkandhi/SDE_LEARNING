@@ -14,3 +14,31 @@
 	path = tracks/git
 	url = ../git_branching_strategy.git
 	branch = main
+[submodule "projects/ai/mempalace"]
+	path = projects/ai/mempalace
+	url = git@github.com:rakeshkandhi/mempalace.git
+	branch = main
+[submodule "projects/ai/ai-agents-for-beginners"]
+	path = projects/ai/ai-agents-for-beginners
+	url = git@github.com:microsoft/ai-agents-for-beginners.git
+	branch = main
+[submodule "projects/ai/Hands-On-LLMs"]
+	path = projects/ai/Hands-On-LLMs
+	url = git@github.com:HandsOnLLM/Hands-On-Large-Language-Models.git
+	branch = main
+[submodule "projects/ai/pytorch-deep-learning"]
+	path = projects/ai/pytorch-deep-learning
+	url = git@github.com:mrdbourke/pytorch-deep-learning.git
+	branch = main
+[submodule "projects/web/laya"]
+	path = projects/web/laya
+	url = git@github.com:rakeshkandhi/laya.git
+	branch = main
+[submodule "projects/tools/pinloop-cli"]
+	path = projects/tools/pinloop-cli
+	url = git@github.com:pinloop-ai/pinloop-cli.git
+	branch = main
+[submodule "projects/misc/ECC"]
+	path = projects/misc/ECC
+	url = git@github.com:affaan-m/ECC.git
+	branch = main
