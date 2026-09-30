@@ -42,3 +42,9 @@
 	path = projects/misc/ECC
 	url = git@github.com:affaan-m/ECC.git
 	branch = main
+[submodule "projects/ai/medha"]
+	path = projects/ai/medha
+	url = git@github.com:rakeshkandhi/medha.git
+[submodule "projects/tools/dev-env-setup"]
+	path = projects/tools/dev-env-setup
+	url = git@github.com:rakeshkandhi/dev-env-setup.git
