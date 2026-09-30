@@ -1,0 +1,16 @@
+[submodule "tracks/ai"]
+	path = tracks/ai
+	url = ../Data-science.git
+	branch = main
+[submodule "tracks/dsa-and-system-design"]
+	path = tracks/dsa-and-system-design
+	url = ../algo-system-design.git
+	branch = prod
+[submodule "tracks/programming"]
+	path = tracks/programming
+	url = ../Web-development.git
+	branch = main
+[submodule "tracks/git"]
+	path = tracks/git
+	url = ../git_branching_strategy.git
+	branch = main

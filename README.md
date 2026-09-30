@@ -1,153 +1,83 @@
-# SDE Learning Repository 🚀
+# SDE Learning Hub
 
-A comprehensive learning resource for Software Development Engineers covering Data Structures & Algorithms (DSA) and System Design fundamentals.
+This repo is the map. The courses live in their own repositories, pinned here as submodules, so each track can be shared with a different person.
 
-## 📚 Table of Contents
+Start the AI path in [`tracks/ai`](tracks/ai) (`Data-science`): Python, math, machine learning, deep learning, NLP, LLMs, MLOps, and data engineering. Interview preparation for programming, DSA, and system design lives in [`tracks/dsa-and-system-design`](tracks/dsa-and-system-design).
 
-- [SDE Learning Repository 🚀](#sde-learning-repository-)
-  - [📚 Table of Contents](#-table-of-contents)
-  - [🎯 Overview](#-overview)
-  - [🛤️ Learning Paths](#️-learning-paths)
-    - [For Beginners](#for-beginners)
-    - [For Intermediate Developers](#for-intermediate-developers)
-    - [For Senior Engineers](#for-senior-engineers)
-  - [📁 Repository Structure](#-repository-structure)
-  - [🚀 Getting Started](#-getting-started)
-  - [💻 Data Structures \& Algorithms](#-data-structures--algorithms)
-    - [Linear Data Structures](#linear-data-structures)
-    - [Non-Linear Data Structures](#non-linear-data-structures)
-    - [Advanced Topics](#advanced-topics)
-  - [🏗️ System Design](#️-system-design)
-  - [🤝 Contributing](#-contributing)
-  - [📖 Resources](#-resources)
-    - [Books](#books)
-    - [Online Platforms](#online-platforms)
-    - [Tools](#tools)
+## Tracks
 
-## 🎯 Overview
+| Track | Path | Repo | Who it is for |
+| --- | --- | --- | --- |
+| AI, from scratch | `tracks/ai` | [Data-science](https://github.com/rakeshkandhi/Data-science) | The AI engineer path. Python fundamentals are module 01 inside this repo. |
+| DSA, system design, LLD, CS | `tracks/dsa-and-system-design` | [algo-system-design](https://github.com/rakeshkandhi/algo-system-design) | Interview prep. Long-form system design essays and the worked DSA pattern notes live here. |
+| Web programming | `tracks/programming` | [Web-development](https://github.com/rakeshkandhi/Web-development) | JavaScript, TypeScript, Node, and React. |
+| Git workflow | `tracks/git` | [git_branching_strategy](https://github.com/rakeshkandhi/git_branching_strategy) | Branching strategies. Public. |
 
-This repository is designed to help software engineers master the essential skills needed for technical interviews and building scalable systems. It covers:
+Suggested order for the AI journey: `tracks/ai` module 01, then math, machine learning, and deep learning as those modules fill in. Run `tracks/dsa-and-system-design` beside it when you want interview reps. Use `tracks/programming` when the work is web, and `tracks/git` before you collaborate on any of the above.
 
-- **Data Structures & Algorithms**: Core patterns and problem-solving techniques
-- **System Design**: Scalable architecture principles and real-world case studies
-- **Practical Examples**: Code implementations and detailed explanations
-- **Interview Preparation**: Structured learning paths for different experience levels
+Reading companions for the AI track. These stay upstream. They are not submodules.
 
-## 🛤️ Learning Paths
+- [pytorch-deep-learning](https://github.com/mrdbourke/pytorch-deep-learning) for module 04
+- [Hands-On Large Language Models](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) for module 06
+- [AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners) for agents inside module 06
 
-### For Beginners
-1. Start with [DSA Fundamentals](./DSA.md)
-2. Practice basic patterns (Two Pointers, Sliding Window)
-3. Learn [System Design Fundamentals](./SYSTEM_DESIGN/fundamentals/fundamentals.md)
-4. Study basic [Caching](./SYSTEM_DESIGN/caching/caching.md) concepts
+## Clone
 
-### For Intermediate Developers
-1. Master advanced DSA patterns (DFS, BFS, Dynamic Programming)
-2. Deep dive into [Scalability](./SYSTEM_DESIGN/scalability/scalability.md)
-3. Study [Database Design](./SYSTEM_DESIGN/databases/databases.md)
-4. Practice [Case Studies](./SYSTEM_DESIGN/case_studies/case_studies.md)
+Someone with access to every track:
 
-### For Senior Engineers
-1. Focus on complex system design scenarios
-2. Study [Microservices Architecture](./SYSTEM_DESIGN/microservices/microservices.md)
-3. Master [Load Balancing](./SYSTEM_DESIGN/load_balancing/load_balancing.md) strategies
-4. Understand [Security](./SYSTEM_DESIGN/security/security.md) considerations
-
-## 📁 Repository Structure
-
-```
-SDE_LEARNING/
-├── README.md                 # This file
-├── DSA.md                   # Data Structures & Algorithms guide
-├── SYSTEM_DESIGN/           # System Design topics
-│   ├── introduction.md      # System Design overview
-│   ├── fundamentals/        # Basic concepts
-│   ├── scalability/         # Scaling strategies
-│   ├── reliability/         # Fault tolerance
-│   ├── caching/            # Caching strategies
-│   ├── databases/          # Database design
-│   ├── load_balancing/     # Load balancing
-│   ├── microservices/      # Microservices architecture
-│   ├── security/           # Security considerations
-│   └── case_studies/       # Real-world examples
-└── assets/                 # Images and diagrams
+```bash
+git clone --recurse-submodules git@github.com:rakeshkandhi/SDE_LEARNING.git
 ```
 
-## 🚀 Getting Started
+Someone with access to one track:
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd SDE_LEARNING
-   ```
+```bash
+git clone git@github.com:rakeshkandhi/SDE_LEARNING.git
+cd SDE_LEARNING
+git submodule update --init tracks/ai
+```
 
-2. **Choose your learning path** based on your experience level
+A private submodule stays empty when GitHub refuses the clone. The hub still clones. Init only the tracks that person can read.
 
-3. **Start with fundamentals** if you're new to the topics
+This repo records a commit for each track. To move a pin forward:
 
-4. **Practice regularly** and implement the concepts in code
+```bash
+git submodule update --remote tracks/ai
+git add tracks/ai
+git commit -m "Advance the AI track pin"
+```
 
-## 💻 Data Structures & Algorithms
+## Access
 
-The [DSA guide](./DSA.md) covers 8 essential patterns:
+Granting access to this hub lets someone read the map. It does not let them read a private track. Add them to the track repo as well.
 
-### Linear Data Structures
-- **Two Pointers**: Efficient array/string processing
-- **Sliding Window**: Dynamic window management
-- **Binary Search**: Logarithmic search techniques
+```bash
+gh repo add-collaborator rakeshkandhi/SDE_LEARNING FRIEND --permission pull
+gh repo add-collaborator rakeshkandhi/Data-science FRIEND --permission pull
+```
 
-### Non-Linear Data Structures
-- **Breadth-First Search (BFS)**: Level-order traversal
-- **Depth-First Search (DFS)**: Path exploration
-- **Backtracking**: Solution space exploration
+Use `push` instead of `pull` when they should be able to commit. `tracks/git` is public, so it needs no invite.
 
-### Advanced Topics
-- **Heaps**: Priority queue operations
-- **Dynamic Programming**: Optimization problems
+When the friend list grows, a GitHub organization with one team per track is the cleaner version of the same split. The submodule layout does not have to change.
 
-## 🏗️ System Design
+## Where the old notes went
 
-The [System Design section](./SYSTEM_DESIGN/) covers:
+The essays, slide decks, and DSA pattern guides that used to sit in this repo now live in `tracks/dsa-and-system-design`:
 
-- **[Introduction](./SYSTEM_DESIGN/introduction.md)**: Core concepts and principles
-- **[Fundamentals](./SYSTEM_DESIGN/fundamentals/fundamentals.md)**: Architecture basics
-- **[Scalability](./SYSTEM_DESIGN/scalability/scalability.md)**: Horizontal and vertical scaling
-- **[Reliability](./SYSTEM_DESIGN/reliability/reliability.md)**: Fault tolerance and redundancy
-- **[Caching](./SYSTEM_DESIGN/caching/caching.md)**: Performance optimization
-- **[Databases](./SYSTEM_DESIGN/databases/databases.md)**: Data storage solutions
-- **[Load Balancing](./SYSTEM_DESIGN/load_balancing/load_balancing.md)**: Traffic distribution
-- **[Microservices](./SYSTEM_DESIGN/microservices/microservices.md)**: Service architecture
-- **[Security](./SYSTEM_DESIGN/security/security.md)**: System protection
-- **[Case Studies](./SYSTEM_DESIGN/case_studies/case_studies.md)**: Real-world examples
+- `system-design/longform/`
+- `system-design/longform/decks/`
+- `dsa/worked-examples/`
 
-## 🤝 Contributing
+Git history on this repo still has the original files.
 
-Contributions are welcome! Please:
+## Kept out of the hub
 
-1. Fork the repository
-2. Create a feature branch
-3. Add your improvements
-4. Submit a pull request
+These repos cover ground a track already owns. They stay on GitHub as historical projects and are not pinned here.
 
-## 📖 Resources
+| Already covered by | Repos left as-is |
+| --- | --- |
+| `tracks/ai` | `Iris-Classification`, `SimpleLinearRegression`, `Churn_for_Bank_Customers`, `Healthcare_cardiovascular`, `Movies_data`, `House_Loan_Data_Analysis`, `mlproject`, `Iphone`, `E-Commerce`, `MIT-ADP`, `Predicting_surgery_outcome`, `Chicken-Disease-Classification`, `Text-Summarization`, `Rice_Variety_classification` |
+| `tracks/programming` | `rock-paper-scissors`, `Netflix-clone`, `Tribute_page`, `Image-gallery`, `Base64toIMG`, `Registration_form`, `Skibble_Assignments`, `to-do-app`, `todos-client`, `full-stack-school` |
+| Nothing in the learning path | `Portfolio`, `react-portfolio`, `admin-portfolio-rakeshkandhi` are three portfolio apps. `azure-ai-engineer-associate` is an empty repo. Product repos (`medha`, `SuperCmd`, and the ecommerce apps) stay independent. |
 
-### Books
-- "Designing Data-Intensive Applications" by Martin Kleppmann
-- "System Design Interview" by Alex Xu
-- "Cracking the Coding Interview" by Gayle McDowell
-
-### Online Platforms
-- LeetCode for DSA practice
-- System Design Primer on GitHub
-- High Scalability blog
-
-### Tools
-- Draw.io for system diagrams
-- Redis for caching examples
-- Docker for containerization practice
-
----
-
-**Happy Learning!** 🎓
-
-Start your journey with the [DSA fundamentals](./DSA.md) or dive into [System Design basics](./SYSTEM_DESIGN/introduction.md).
+Forks of other people's projects (`zed`, `warp`, `mempalace`, `claude-cookbooks`, and the rest) are not tracks.
