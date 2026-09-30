@@ -48,3 +48,11 @@
 [submodule "projects/tools/dev-env-setup"]
 	path = projects/tools/dev-env-setup
 	url = git@github.com:rakeshkandhi/dev-env-setup.git
+[submodule "tracks/python"]
+	path = tracks/python
+	url = git@github.com:rakeshkandhi/python-fundamentals.git
+	branch = prod
+[submodule "tracks/node"]
+	path = tracks/node
+	url = git@github.com:rakeshkandhi/node-js.git
+	branch = prod
