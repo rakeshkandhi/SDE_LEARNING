@@ -12,14 +12,30 @@ Start the AI path in [`tracks/ai`](tracks/ai) (`Data-science`): Python, math, ma
 | DSA, system design, LLD, CS | `tracks/dsa-and-system-design` | [algo-system-design](https://github.com/rakeshkandhi/algo-system-design) | Interview prep. Long-form system design essays and the worked DSA pattern notes live here. |
 | Web programming | `tracks/programming` | [Web-development](https://github.com/rakeshkandhi/Web-development) | JavaScript, TypeScript, Node, and React. |
 | Git workflow | `tracks/git` | [git_branching_strategy](https://github.com/rakeshkandhi/git_branching_strategy) | Branching strategies. Public. |
+| Python | `tracks/python` | [python-fundamentals](https://github.com/rakeshkandhi/python-fundamentals) | Python fundamentals as a dedicated track. |
+| Node.js | `tracks/node` | [node-js](https://github.com/rakeshkandhi/node-js) | Node.js as a dedicated track. |
 
 Suggested order for the AI journey: `tracks/ai` module 01, then math, machine learning, and deep learning as those modules fill in. Run `tracks/dsa-and-system-design` beside it when you want interview reps. Use `tracks/programming` when the work is web, and `tracks/git` before you collaborate on any of the above.
 
-Reading companions for the AI track. These stay upstream. They are not submodules.
+## Projects
 
-- [pytorch-deep-learning](https://github.com/mrdbourke/pytorch-deep-learning) for module 04
-- [Hands-On Large Language Models](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) for module 06
-- [AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners) for agents inside module 06
+`projects/` pins projects and reading companions, grouped by category.
+
+| Path | Repo | Notes |
+| --- | --- | --- |
+| `projects/ai/medha` | [medha](https://github.com/rakeshkandhi/medha) | Own project |
+| `projects/ai/mempalace` | [mempalace](https://github.com/rakeshkandhi/mempalace) | Fork |
+| `projects/web/laya` | [laya](https://github.com/rakeshkandhi/laya) | Own project |
+| `projects/tools/dev-env-setup` | [dev-env-setup](https://github.com/rakeshkandhi/dev-env-setup) | Own project |
+| `projects/ai/pytorch-deep-learning` | [mrdbourke/pytorch-deep-learning](https://github.com/mrdbourke/pytorch-deep-learning) | Upstream, read-only. Companion for AI module 04 |
+| `projects/ai/Hands-On-LLMs` | [HandsOnLLM/Hands-On-Large-Language-Models](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) | Upstream, read-only. Companion for AI module 06 |
+| `projects/ai/ai-agents-for-beginners` | [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners) | Upstream, read-only. Agents inside AI module 06 |
+| `projects/tools/pinloop-cli` | [pinloop-ai/pinloop-cli](https://github.com/pinloop-ai/pinloop-cli) | Upstream, read-only |
+| `projects/misc/ECC` | [affaan-m/ECC](https://github.com/affaan-m/ECC) | Upstream, read-only |
+
+Upstream repos are cloned shallow (`shallow = true`) and set to `ignore = dirty`, so running notebooks inside them does not clutter `git status`.
+
+Your own repos use relative URLs (`../repo.git`). They resolve against however you cloned the hub, SSH or HTTPS. Upstream repos use HTTPS so they clone without an SSH key.
 
 ## Clone
 
@@ -39,13 +55,22 @@ git submodule update --init tracks/ai
 
 A private submodule stays empty when GitHub refuses the clone. The hub still clones. Init only the tracks that person can read.
 
-This repo records a commit for each track. To move a pin forward:
+Recommended local settings, once per clone:
 
 ```bash
-git submodule update --remote tracks/ai
-git add tracks/ai
-git commit -m "Advance the AI track pin"
+git config submodule.recurse true         # pull/checkout also update submodules
+git config status.submoduleSummary true   # git status shows which submodules moved
 ```
+
+This repo records a commit for each submodule. To move a pin forward:
+
+```bash
+git submodule update --remote --merge tracks/ai
+git add tracks/ai
+git commit -m "chore(submodule): bump tracks/ai to $(git -C tracks/ai rev-parse --short HEAD)"
+```
+
+Drop the path to move every pin at once. After editing `.gitmodules`, run `git submodule sync` so local clones pick up URL changes.
 
 ## Access
 
@@ -78,6 +103,6 @@ These repos cover ground a track already owns. They stay on GitHub as historical
 | --- | --- |
 | `tracks/ai` | `Iris-Classification`, `SimpleLinearRegression`, `Churn_for_Bank_Customers`, `Healthcare_cardiovascular`, `Movies_data`, `House_Loan_Data_Analysis`, `mlproject`, `Iphone`, `E-Commerce`, `MIT-ADP`, `Predicting_surgery_outcome`, `Chicken-Disease-Classification`, `Text-Summarization`, `Rice_Variety_classification` |
 | `tracks/programming` | `rock-paper-scissors`, `Netflix-clone`, `Tribute_page`, `Image-gallery`, `Base64toIMG`, `Registration_form`, `Skibble_Assignments`, `to-do-app`, `todos-client`, `full-stack-school` |
-| Nothing in the learning path | `Portfolio`, `react-portfolio`, `admin-portfolio-rakeshkandhi` are three portfolio apps. `azure-ai-engineer-associate` is an empty repo. Product repos (`medha`, `SuperCmd`, and the ecommerce apps) stay independent. |
+| Nothing in the learning path | `Portfolio`, `react-portfolio`, `admin-portfolio-rakeshkandhi` are three portfolio apps. `azure-ai-engineer-associate` is an empty repo. Product repos (`SuperCmd` and the ecommerce apps) stay independent. |
 
-Forks of other people's projects (`zed`, `warp`, `mempalace`, `claude-cookbooks`, and the rest) are not tracks.
+Forks of other people's projects (`zed`, `warp`, `claude-cookbooks`, and the rest) are not pinned. `mempalace` is the exception, under `projects/ai`.

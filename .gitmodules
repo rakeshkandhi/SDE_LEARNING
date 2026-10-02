@@ -16,43 +16,55 @@
 	branch = main
 [submodule "projects/ai/mempalace"]
 	path = projects/ai/mempalace
-	url = git@github.com:rakeshkandhi/mempalace.git
+	url = ../mempalace.git
 	branch = main
 [submodule "projects/ai/ai-agents-for-beginners"]
 	path = projects/ai/ai-agents-for-beginners
-	url = git@github.com:microsoft/ai-agents-for-beginners.git
+	url = https://github.com/microsoft/ai-agents-for-beginners.git
 	branch = main
+	shallow = true
+	ignore = dirty
 [submodule "projects/ai/Hands-On-LLMs"]
 	path = projects/ai/Hands-On-LLMs
-	url = git@github.com:HandsOnLLM/Hands-On-Large-Language-Models.git
+	url = https://github.com/HandsOnLLM/Hands-On-Large-Language-Models.git
 	branch = main
+	shallow = true
+	ignore = dirty
 [submodule "projects/ai/pytorch-deep-learning"]
 	path = projects/ai/pytorch-deep-learning
-	url = git@github.com:mrdbourke/pytorch-deep-learning.git
+	url = https://github.com/mrdbourke/pytorch-deep-learning.git
 	branch = main
+	shallow = true
+	ignore = dirty
 [submodule "projects/web/laya"]
 	path = projects/web/laya
-	url = git@github.com:rakeshkandhi/laya.git
+	url = ../laya.git
 	branch = main
 [submodule "projects/tools/pinloop-cli"]
 	path = projects/tools/pinloop-cli
-	url = git@github.com:pinloop-ai/pinloop-cli.git
+	url = https://github.com/pinloop-ai/pinloop-cli.git
 	branch = main
+	shallow = true
+	ignore = dirty
 [submodule "projects/misc/ECC"]
 	path = projects/misc/ECC
-	url = git@github.com:affaan-m/ECC.git
+	url = https://github.com/affaan-m/ECC.git
 	branch = main
+	shallow = true
+	ignore = dirty
 [submodule "projects/ai/medha"]
 	path = projects/ai/medha
-	url = git@github.com:rakeshkandhi/medha.git
+	url = ../medha.git
+	branch = prod
 [submodule "projects/tools/dev-env-setup"]
 	path = projects/tools/dev-env-setup
-	url = git@github.com:rakeshkandhi/dev-env-setup.git
+	url = ../dev-env-setup.git
+	branch = prod
 [submodule "tracks/python"]
 	path = tracks/python
-	url = git@github.com:rakeshkandhi/python-fundamentals.git
+	url = ../python-fundamentals.git
 	branch = prod
 [submodule "tracks/node"]
 	path = tracks/node
-	url = git@github.com:rakeshkandhi/node-js.git
+	url = ../node-js.git
 	branch = prod
